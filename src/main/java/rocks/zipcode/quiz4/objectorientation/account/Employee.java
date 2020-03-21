@@ -6,6 +6,7 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class Employee implements Worker, Transactable{
     private BankAccount bankAccount;
     private Double numberOfHours;
+    private Double val;
     public Employee() {
     }
 
@@ -52,6 +53,6 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public Double getBalance() {
-        return null;
+        return val;
     }
 }

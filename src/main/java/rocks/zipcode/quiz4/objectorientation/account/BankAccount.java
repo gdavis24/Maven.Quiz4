@@ -17,13 +17,18 @@ public class BankAccount extends Account implements Transactable{
         if (amountToIncreaseBy > 0){
             val += amountToIncreaseBy;
         }
-
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
         if (amountToDecreaseBy > 0) {
             val -= amountToDecreaseBy;
+        }
+        else {
+            throw new IllegalArgumentException();
         }
     }
 
