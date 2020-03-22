@@ -38,15 +38,21 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        StringBuilder newString = new StringBuilder();
+        int count = 0;
         char[] charsToRemove = str.toCharArray();
-        String checkString = str.toLowerCase();
-        for (int i = 0; i < str.length() - 1; i++) {
-            if (checkString.charAt(i) == checkString.charAt(i + 1)) {
-                newString.append(str.charAt(i));
+        char[] result = new char[str.length() - count];
+        for (int i = 0; i < charsToRemove.length - 1; i++) {
+            if (i != 0) {
+                if (charsToRemove[i] == charsToRemove[i + 1] || charsToRemove[i] == charsToRemove[i - 1]) {
+                    count++;
+                }
+            }
+            else {
+                result[i] = charsToRemove[i];
             }
         }
-        return newString.toString();
+        System.out.println(count);
+        return result.toString();
     }
 
     public static String invertCasing(String str) {
