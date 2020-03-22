@@ -7,8 +7,10 @@ import java.util.Map;
  * @author leon on 27/12/2018.
  */
 public class Food {
+    private Spice spice;
+    private List<Spice> listOfSpices;
     public List<Spice> getAllSpices() {
-        return null;
+        return listOfSpices;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
@@ -16,5 +18,8 @@ public class Food {
     }
 
     public void applySpice(Spice spice) {
+        if (!listOfSpices.contains(spice)){
+            listOfSpices.add(spice);
+        }
     }
 }

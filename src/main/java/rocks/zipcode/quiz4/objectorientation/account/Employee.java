@@ -11,6 +11,7 @@ public class Employee implements Worker, Transactable{
     }
 
     public Employee(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
     }
 
     public BankAccount getBankAccount() {
