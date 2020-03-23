@@ -8,9 +8,9 @@ import java.util.Map;
  */
 public class Food {
     private Spice spice;
-    private List<Spice> listOfSpices;
+    private List<Spice> spiceList;
     public List<Spice> getAllSpices() {
-        return listOfSpices;
+        return spiceList;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
@@ -18,8 +18,8 @@ public class Food {
     }
 
     public void applySpice(Spice spice) {
-        if (!listOfSpices.contains(spice)){
-            listOfSpices.add(spice);
+        if (!spiceList.contains(spice)){
+            spiceList.add(spice);
         }
     }
 }

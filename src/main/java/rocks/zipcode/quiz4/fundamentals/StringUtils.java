@@ -1,5 +1,9 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -38,24 +42,32 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        int count = 0;
-        char[] charsToRemove = str.toCharArray();
-        char[] result = new char[str.length() - count];
-        for (int i = 0; i < charsToRemove.length - 1; i++) {
-            if (i != 0) {
-                if (charsToRemove[i] == charsToRemove[i + 1] || charsToRemove[i] == charsToRemove[i - 1]) {
-                    count++;
-//                    if (count++ < 1){
-//                        result[i] = charsToRemove[i];
-//                    }
+//        int count = 0;
+//        char[] result = new char[str.length() - count];
+//        for (int i = 0; i < charsToRemove.length - 1; i++) {
+//            if (i != 0) {
+//                if (charsToRemove[i] == charsToRemove[i + 1] || charsToRemove[i] == charsToRemove[i - 1]) {
+//                    count++;
+//                }
+//                else result[i] = charsToRemove[i];
+//            }
+//            else {
+//                result[i] = charsToRemove[i];
+//            }
+//        }
+//        System.out.println(count);
+//        System.out.println(result);
+//        return result.toString();
+        List<Character> charList = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (i != 0){
+                if (str.charAt(i) != str.charAt(i - 1) && str.charAt(i) != str.charAt(i + 1)){
+                    charList.add(str.charAt(i));
                 }
             }
-            else {
-                result[i] = charsToRemove[i];
-            }
         }
-        System.out.println(count);
-        return result.toString();
+
+        return charList.toString();
     }
 
     public static String invertCasing(String str) {

@@ -27,7 +27,7 @@ public class BankAccount extends Account implements Transactable{
         if (amountToDecreaseBy > 0) {
             val -= amountToDecreaseBy;
         }
-        else {
+        else{
             throw new IllegalArgumentException();
         }
     }
