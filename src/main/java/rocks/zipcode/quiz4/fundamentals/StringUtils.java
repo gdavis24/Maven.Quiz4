@@ -45,6 +45,9 @@ public class StringUtils {
             if (i != 0) {
                 if (charsToRemove[i] == charsToRemove[i + 1] || charsToRemove[i] == charsToRemove[i - 1]) {
                     count++;
+//                    if (count++ < 1){
+//                        result[i] = charsToRemove[i];
+//                    }
                 }
             }
             else {
